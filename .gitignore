@@ -1,12 +1,12 @@
 # Ignore everything
-*
+/*
 
 # Except this...
 !*.vimrc
 !*.vim
 !*.bashrc
 !*.zshrc
-!bin/*
-!antigen/*
+!bin/
+!antigen/
 !.gitignore
 

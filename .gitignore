@@ -7,5 +7,6 @@
 !*.bashrc
 !*.zshrc
 !bin
+!antigen
 !.gitignore
 

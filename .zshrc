@@ -1,20 +1,35 @@
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/dylan/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
+
 # Variables
-export TERM="xterm-256color"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-source ~/antigen/antigen.zsh
-
 # Configure powerline
 POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
 POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status go_version rbenv background_jobs root_indicator time)
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+
+# Configure tmux oh-my-zsh plugin
+ZSH_TMUX_AUTOSTART=true
+
+# Load thefuck
+eval $(thefuck --alias)
+
+source ~/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
+antigen bundle docker
+antigen bundle tmux
+antigen bundle vagrant
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -25,15 +40,6 @@ antigen theme bhilburn/powerlevel9k powerlevel9k
 
 # Tell Antigen that you're done.
 antigen apply
-
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/dylan/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -82,18 +88,6 @@ COMPLETION_WAITING_DOTS="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-#plugins=(
-#  git
-#  zsh-autosuggestions
-#)
-
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -140,9 +134,6 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval `ssh-agent -s`
   ssh-add
 fi
-
-# Alias dgit for git in the home directory
-alias dgit='git --git-dir ~/.dotfiles/.git --work-tree=$HOME'
 
 # Call rbenv
 eval "$(rbenv init -)"

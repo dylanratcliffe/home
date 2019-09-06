@@ -3,9 +3,9 @@
 
 # Except this...
 !*.vimrc
-!*.vim
 !*.bashrc
 !*.zshrc
+!*.tmux.conf
 !bin/
 !antigen/
 !.gitignore

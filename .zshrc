@@ -4,8 +4,13 @@ source $ZSH/oh-my-zsh.sh
 
 # Variables
 
+# PATH CHANGES
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Python
+export PATH=~/Library/Python/3.7/bin:$PATH
+# Go
+export PATH=$HOME/go/bin:$PATH
 
 # Configure powerline
 POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
@@ -15,7 +20,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status go_version rbenv background_jobs root
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 
 # Configure tmux oh-my-zsh plugin
-ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTART=false
 
 # Load thefuck
 eval $(thefuck --alias)

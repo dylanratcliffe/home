@@ -7,6 +7,6 @@ DISK=$(diskutil list | grep Steam | grep -oE '[^ ]+$')
 sudo diskutil umount $DISK
 
 # Mount it in the correct location
-sudo mount -t apfs $DISK /Users/dylan/Library/Application\ Support/Steam
+sudo mount -t apfs $DISK /Users/dylanratcliffe/Library/Application\ Support/Steam
 
 open -a Steam

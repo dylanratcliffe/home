@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/dylan/.oh-my-zsh"
+export ZSH="/Users/dylanratcliffe/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
 # Variables
@@ -128,7 +128,7 @@ setopt appendhistory autocd extendedglob
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/Users/dylan/.zshrc'
+zstyle :compinstall filename '/Users/dylanratcliffe/.zshrc'
 
 autoload -Uz compinit
 compinit

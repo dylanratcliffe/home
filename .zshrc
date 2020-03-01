@@ -134,6 +134,10 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Google cloud utils
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+
 # Start ssh-agent
 if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval `ssh-agent -s`

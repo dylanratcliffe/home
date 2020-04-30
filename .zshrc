@@ -11,6 +11,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=~/Library/Python/3.7/bin:$PATH
 # Go
 export PATH=$HOME/go/bin:$PATH
+export GOPATH=$(go env GOPATH)
+export GOPATH=$GOPATH:$HOME/git/go
 
 # Configure powerline
 POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
@@ -139,10 +141,12 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.in
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
 # Start ssh-agent
-if [ -z "$SSH_AUTH_SOCK" ] ; then
-  eval `ssh-agent -s`
-  ssh-add
+if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+	  eval `ssh-agent`
+	    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
 fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+ssh-add -l > /dev/null || ssh-add
 
 # Call rbenv
 eval "$(rbenv init -)"

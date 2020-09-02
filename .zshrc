@@ -8,7 +8,7 @@ source $ZSH/oh-my-zsh.sh
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Python
-export PATH=~/Library/Python/3.7/bin:$PATH
+export PATH=~/.local/bin:$PATH
 # Go
 export PATH=$HOME/go/bin:$PATH
 export GOPATH=$(go env GOPATH)
@@ -142,13 +142,26 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 
 # Start ssh-agent
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-	  eval `ssh-agent`
-	    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+	eval `ssh-agent`
+	ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
 fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-ssh-add -l > /dev/null || ssh-add
+
+# Add my personal key
+FINGERPRINT=SHA256:iAlPv2UdmNXZPPuf0ny2saLUf/t0osH23dptbVolrqU
+KEYPATH=~/.ssh/id_rsa
+
+# Check if the key is alredy added
+ssh-add -l | grep -q $FINGERPRINT
+if [ $? -eq 1 ]; then
+	# if the key is not there then get the password from 1password
+	sh-add $KEYPATH
+fi
 
 # Call rbenv
 eval "$(rbenv init -)"
 
-
+# Set up python, this assumes you are using pyenv for mangaing python
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi

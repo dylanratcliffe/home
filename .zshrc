@@ -155,7 +155,7 @@ KEYPATH=~/.ssh/id_rsa
 ssh-add -l | grep -q $FINGERPRINT
 if [ $? -eq 1 ]; then
 	# if the key is not there then get the password from 1password
-	sh-add $KEYPATH
+	ssh-add $KEYPATH
 fi
 
 # Call rbenv

@@ -162,6 +162,10 @@ fi
 eval "$(rbenv init -)"
 
 # Set up python, this assumes you are using pyenv for mangaing python
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi

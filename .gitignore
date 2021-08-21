@@ -8,5 +8,6 @@
 !*.tmux.conf
 !bin/
 !antigen/
+!tmux-layouts/
 !.gitignore
 

@@ -121,6 +121,7 @@ COMPLETION_WAITING_DOTS="true"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias dgit='git --git-dir ~/.dotfiles/.git --work-tree=$HOME'
+alias k='kubectl'
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile

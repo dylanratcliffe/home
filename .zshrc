@@ -6,7 +6,7 @@ source $ZSH/oh-my-zsh.sh
 
 # PATH CHANGES
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin$PATH
 # Python
 export PATH=~/.local/bin:$PATH
 # Go
@@ -122,6 +122,7 @@ COMPLETION_WAITING_DOTS="true"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias dgit='git --git-dir ~/.dotfiles/.git --work-tree=$HOME'
 alias k='kubectl'
+alias ding="osascript -e 'display notification \"Terminal notifying you\" with title \"DING!\"'"
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile

@@ -29,6 +29,9 @@ eval $(thefuck --alias)
 
 source ~/antigen/antigen.zsh
 
+# Source Overmind Auth keys
+source ~/git/auth0-test-data/environment-setup.sh
+
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 

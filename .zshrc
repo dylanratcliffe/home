@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/dylanratcliffe/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
@@ -11,6 +18,8 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin$PATH
 export PATH=~/.local/bin:$PATH
 # Go
 export PATH=$HOME/go/bin:$PATH
+# Homebrew
+export PATH=/opt/homebrew/bin:$PATH
 export GOPATH=$(go env GOPATH)
 export GOPATH=$GOPATH:$HOME/git/go
 
@@ -43,7 +52,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 
 # Load the theme.
-antigen theme bhilburn/powerlevel9k powerlevel9k
+antigen theme romkatv/powerlevel10k
 
 # Tell Antigen that you're done.
 antigen apply
@@ -138,10 +147,6 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# Google cloud utils
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-
 # Start ssh-agent
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
 	eval `ssh-agent`
@@ -150,7 +155,7 @@ fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 
 # Add my personal key
-FINGERPRINT=SHA256:iAlPv2UdmNXZPPuf0ny2saLUf/t0osH23dptbVolrqU
+FINGERPRINT=SHA256:kWwEiQzupoMpyxNErG3PhGylmwsOhRccjmEv8Xh40Mc
 KEYPATH=~/.ssh/id_rsa
 
 # Check if the key is alredy added
@@ -171,3 +176,6 @@ eval "$(pyenv init --path)"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

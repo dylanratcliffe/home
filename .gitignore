@@ -5,7 +5,7 @@
 !*.vimrc
 !*.bashrc
 !*.zshrc
-!*.tmux.conf
+!*.tmux*
 !bin/
 !antigen/
 !tmux-layouts/

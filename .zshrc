@@ -23,6 +23,9 @@ export PATH=/opt/homebrew/bin:$PATH
 export GOPATH=$(go env GOPATH)
 export GOPATH=$GOPATH:$HOME/git/go
 
+# Add Overmind tokens
+source ~/git/auth0-test-data/environment-setup.sh
+
 # Configure powerline
 POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
 POWERLEVEL9K_MODE='nerdfont-complete'

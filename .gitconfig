@@ -8,4 +8,8 @@
 [init]
 	defaultBranch = main
 [safe]
-	directory = /workspace
+	directory = *
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+

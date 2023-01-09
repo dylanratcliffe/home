@@ -10,6 +10,7 @@ export ZSH="/Users/dylanratcliffe/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
 # Variables
+export GITHUB_USERNAME=dyanratcliffe
 
 # PATH CHANGES
 # If you come from bash you might have to change your $PATH.

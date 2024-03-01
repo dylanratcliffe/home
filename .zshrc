@@ -15,6 +15,9 @@ source $ZSH/oh-my-zsh.sh
 # Variables
 export GITHUB_USERNAME=dyanratcliffe
 
+# Evaluate secrets
+source ~/.secrets.d/*.sh
+
 # PATH CHANGES
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin$PATH

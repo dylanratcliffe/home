@@ -11,3 +11,9 @@
 !tmux-layouts/
 !.gitignore
 
+# Inlcude SSH folder
+!.ssh
+# But not the keys
+.ssh/*
+# But do include the config
+!.ssh/config

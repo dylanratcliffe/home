@@ -160,23 +160,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# Start ssh-agent
-if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-	eval `ssh-agent`
-	ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-fi
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-
-# Add my personal key
-FINGERPRINT=SHA256:kWwEiQzupoMpyxNErG3PhGylmwsOhRccjmEv8Xh40Mc
-KEYPATH=~/.ssh/id_rsa
-
-# Check if the key is alredy added
-ssh-add -l | grep -q $FINGERPRINT
-if [ $? -eq 1 ]; then
-	# if the key is not there then get the password from 1password
-	ssh-add $KEYPATH
-fi
+# Set up 1password SSH agent
+export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
 # Call rbenv
 eval "$(rbenv init -)"

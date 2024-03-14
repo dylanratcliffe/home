@@ -3,6 +3,7 @@
 # Please adapt and uncomment the following lines:
 	name = Dylan Ratcliffe
 	email = dylan@overmind.tech
+	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDv+KTFvt6CvYyuXNvJOXH9V5uWPt9fhMKmfqzZ6oVwtabjg8V4H1652uFv2pj2SObK8tuHd2nEww5Mm+ZMjZXmyI8w2k4mnz/RFuMADRk1UceigiGJ2oIfwQEewBLLR8yewE8nmOwmujGtlLu35H7jgIQ41a38H/ux6sJSymTmH1MN+L9FPzrR0kp7vK5c761Hxsxahs8LkG2eolSv8LuNFBb03uYWhP9B1n6i1kIp9BcTzhv2ezMnrCTksUeqNuIX6gGR/ah7OXZ35h09G00J6eQDZgEUffurfY9990lu1buIHqWg+hZiw6iL3IZU6w4bATPiET6Wd+n2pZYoycpLcEO1RrQMjwSbR5MPqIiCZh4JgMMvzbjJ/jvWdK9S4aKoG0VRyfLoV6AvTBWMsVNyrG63HMtRINo6dkquX5NwFoIYdMwtSq31yAPVUzzVG6vGWdWu/2YY3Q6Dp2Qkwj71qTB2GkE8cH80I7e6fWxv+ozFPNhmTXlZdWYRuflYRsU=
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 [init]
@@ -17,3 +18,7 @@
 	gpgsign = true
 [push]
         autoSetupRemote = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign

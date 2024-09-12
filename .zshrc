@@ -15,9 +15,6 @@ source $ZSH/oh-my-zsh.sh
 # Variables
 export GITHUB_USERNAME=dyanratcliffe
 
-# Evaluate secrets
-source ~/.secrets.d/*.sh
-
 # PATH CHANGES
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin$PATH
@@ -30,9 +27,6 @@ export PATH=/opt/homebrew/bin:$PATH
 export GOPATH=$(go env GOPATH)
 export GOPATH=$GOPATH:$HOME/git/go
 
-# Add Overmind tokens
-source ~/git/auth0-test-data/environment-setup.sh
-
 # Configure powerline
 POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
 POWERLEVEL9K_MODE='nerdfont-complete'
@@ -43,13 +37,7 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 # Configure tmux oh-my-zsh plugin
 ZSH_TMUX_AUTOSTART=false
 
-# Load thefuck
-eval $(thefuck --alias)
-
 source ~/antigen/antigen.zsh
-
-# Source Overmind Auth keys
-source ~/git/auth0-test-data/environment-setup.sh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh

@@ -133,7 +133,7 @@ COMPLETION_WAITING_DOTS="true"
 alias dgit='git --git-dir ~/.dotfiles/.git --work-tree=$HOME'
 alias k='kubectl'
 alias ding="osascript -e 'display notification \"Terminal notifying you\" with title \"DING!\"'"
-alias llm='brew services start ollama; sleep 1; ollama run gemma3:27b; brew services stop ollama'
+alias llm='brew services start ollama; sleep 1; ollama run gpt-oss:20b; brew services stop ollama'
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile

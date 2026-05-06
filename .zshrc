@@ -17,15 +17,16 @@ export GITHUB_USERNAME=dyanratcliffe
 
 # PATH CHANGES
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 # Python
 export PATH=~/.local/bin:$PATH
 # Go
 export PATH=$HOME/go/bin:$PATH
 # Homebrew
 export PATH=/opt/homebrew/bin:$PATH
-export GOPATH=$(go env GOPATH)
-export GOPATH=$GOPATH:$HOME/git/go
+export GOPATH=$HOME/go:$HOME/git/go
+# Manually installed Docker
+export PATH=/Applications/Docker.app/Contents/Resources/bin:$PATH
 
 # Configure powerline
 POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
@@ -133,7 +134,7 @@ COMPLETION_WAITING_DOTS="true"
 alias dgit='git --git-dir ~/.dotfiles/.git --work-tree=$HOME'
 alias k='kubectl'
 alias ding="osascript -e 'display notification \"Terminal notifying you\" with title \"DING!\"'"
-alias llm='brew services start ollama; sleep 1; ollama run gpt-oss:20b; brew services stop ollama'
+alias llm='brew services start ollama; sleep 1; ollama run qwen3.5:35b; brew services stop ollama'
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -155,11 +156,9 @@ export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agen
 # Call rbenv
 eval "$(rbenv init -)"
 
-# Set up python, this assumes you are using pyenv for mangaing python
+# Set up python, this assumes you are using pyenv for managing python
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
